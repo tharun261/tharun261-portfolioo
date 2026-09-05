@@ -6,15 +6,17 @@ const scrollTo = (id: string) =>
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 
 const HeroBackdrop = () => (
-  <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+  <div className="pointer-events-none absolute inset-0 overflow-hidden bg-background" aria-hidden="true">
+    {/* very dark base */}
+    <div className="absolute inset-0 bg-[#070710]" />
     {/* base radial glows */}
-    <div className="absolute -right-24 -top-10 h-[42rem] w-[42rem] rounded-full bg-primary/20 blur-[130px]" />
-    <div className="absolute right-[10%] top-1/2 h-[26rem] w-[26rem] -translate-y-1/2 rounded-full bg-cyanic/10 blur-[110px]" />
+    <div className="absolute -right-24 -top-10 h-[42rem] w-[42rem] rounded-full bg-primary/15 blur-[130px]" />
+    <div className="absolute right-[10%] top-1/2 h-[26rem] w-[26rem] -translate-y-1/2 rounded-full bg-cyanic/8 blur-[110px]" />
     <div
       className="absolute inset-0"
       style={{
         background:
-          "radial-gradient(55% 60% at 72% 42%, color-mix(in oklab, var(--neon) 14%, transparent), transparent 70%), radial-gradient(40% 45% at 15% 85%, color-mix(in oklab, var(--cyanic) 7%, transparent), transparent 70%)",
+          "radial-gradient(55% 60% at 72% 42%, color-mix(in oklab, var(--neon) 11%, transparent), transparent 70%), radial-gradient(40% 45% at 15% 85%, color-mix(in oklab, var(--cyanic) 6%, transparent), transparent 70%)",
       }}
     />
 
@@ -94,8 +96,13 @@ const HeroBackdrop = () => (
     <div
       className="absolute inset-0"
       style={{
-        background: "linear-gradient(90deg, color-mix(in oklab, var(--background) 88%, transparent) 0%, transparent 45%)",
+        background: "linear-gradient(90deg, #070710 0%, color-mix(in oklab, var(--background) 70%, transparent) 30%, transparent 55%)",
       }}
+    />
+    {/* darken bottom edge so the photo blends into the next section */}
+    <div
+      className="absolute inset-x-0 bottom-0 h-32"
+      style={{ background: "linear-gradient(to bottom, transparent, #070710)" }}
     />
   </div>
 );
@@ -200,6 +207,13 @@ export function Hero() {
             height={624}
             className="relative mx-auto -mb-16 w-full max-w-lg scale-110 object-contain object-bottom drop-shadow-[0_25px_60px_rgba(0,0,0,0.6)] lg:-mb-24 lg:scale-125"
           />
+          {/* Software Developer label at the bottom of the hero image */}
+          <div className="relative z-10 mx-auto mt-2 w-fit">
+            <span className="glass glow-hover inline-flex items-center gap-2 rounded-full px-5 py-2 font-mono text-sm font-semibold tracking-wide text-primary">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
+              Software Developer
+            </span>
+          </div>
         </div>
       </div>
     </section>
