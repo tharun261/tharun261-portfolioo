@@ -157,7 +157,10 @@ export function Hero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-md">
-          <div className="absolute inset-x-6 bottom-0 top-8 rounded-[3rem] bg-primary/30 blur-[90px]" />
+          {/* neon ring directly behind the photo (all screens) */}
+          <div className="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[120%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/25" />
+          <div className="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[104%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/40 shadow-[0_0_60px_-10px_color-mix(in_oklab,var(--neon)_60%,transparent)]" />
+          <div className="absolute inset-x-6 bottom-0 top-8 rounded-[3rem] bg-primary/35 blur-[90px]" />
           <div className="absolute left-0 top-10 hidden rounded-2xl glass floaty px-4 py-3 font-mono text-sm text-primary sm:block">
             &lt;/&gt;
           </div>
