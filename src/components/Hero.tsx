@@ -207,6 +207,13 @@ export function Hero() {
             height={624}
             className="relative mx-auto -mb-16 w-full max-w-lg scale-110 object-contain object-bottom drop-shadow-[0_25px_60px_rgba(0,0,0,0.6)] lg:-mb-24 lg:scale-125"
           />
+          {/* Software Developer label at the bottom of the hero image */}
+          <div className="relative z-10 mx-auto mt-2 w-fit">
+            <span className="glass glow-hover inline-flex items-center gap-2 rounded-full px-5 py-2 font-mono text-sm font-semibold tracking-wide text-primary">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
+              Software Developer
+            </span>
+          </div>
         </div>
       </div>
     </section>
