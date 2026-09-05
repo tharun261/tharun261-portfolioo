@@ -5,10 +5,105 @@ import { GITHUB_URL, LINKEDIN_URL } from "@/data/portfolio";
 const scrollTo = (id: string) =>
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 
+const HeroBackdrop = () => (
+  <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+    {/* base radial glows */}
+    <div className="absolute -right-24 -top-10 h-[42rem] w-[42rem] rounded-full bg-primary/20 blur-[130px]" />
+    <div className="absolute right-[10%] top-1/2 h-[26rem] w-[26rem] -translate-y-1/2 rounded-full bg-cyanic/10 blur-[110px]" />
+    <div
+      className="absolute inset-0"
+      style={{
+        background:
+          "radial-gradient(55% 60% at 72% 42%, color-mix(in oklab, var(--neon) 14%, transparent), transparent 70%), radial-gradient(40% 45% at 15% 85%, color-mix(in oklab, var(--cyanic) 7%, transparent), transparent 70%)",
+      }}
+    />
+
+    {/* concentric neon rings around the photo (desktop/tablet) */}
+    <div className="absolute right-0 top-1/2 hidden aspect-square w-[44rem] -translate-y-1/2 translate-x-[12%] sm:block lg:w-[50rem]">
+      <div className="absolute inset-0 rounded-full border border-primary/20" />
+      <div className="absolute inset-[7%] rounded-full border border-primary/30 shadow-[0_0_45px_-8px_color-mix(in_oklab,var(--neon)_45%,transparent)]" />
+      <div className="absolute inset-[15%] rounded-full border border-cyanic/20" />
+      <div className="absolute inset-[24%] rounded-full border border-primary/15" />
+      {/* glowing arc accents */}
+      <svg viewBox="0 0 100 100" className="absolute inset-[7%] h-[86%] w-[86%] animate-[spin_50s_linear_infinite]">
+        <circle cx="50" cy="50" r="49" fill="none" stroke="var(--neon)" strokeWidth="0.5" strokeDasharray="20 287" strokeLinecap="round" opacity="0.9" />
+      </svg>
+      <svg viewBox="0 0 100 100" className="absolute inset-[15%] h-[70%] w-[70%] animate-[spin_70s_linear_infinite_reverse]">
+        <circle cx="50" cy="50" r="49" fill="none" stroke="var(--cyanic)" strokeWidth="0.4" strokeDasharray="10 297" strokeLinecap="round" opacity="0.7" />
+      </svg>
+    </div>
+
+    {/* dotted grids */}
+    <div
+      className="absolute left-4 top-24 hidden h-40 w-40 opacity-50 md:block"
+      style={{
+        backgroundImage: "radial-gradient(color-mix(in oklab, var(--neon) 70%, transparent) 1px, transparent 1.5px)",
+        backgroundSize: "16px 16px",
+      }}
+    />
+    <div
+      className="absolute bottom-16 right-8 hidden h-44 w-44 opacity-40 md:block"
+      style={{
+        backgroundImage: "radial-gradient(color-mix(in oklab, var(--cyanic) 60%, transparent) 1px, transparent 1.5px)",
+        backgroundSize: "18px 18px",
+      }}
+    />
+    <div
+      className="absolute left-[42%] top-16 hidden h-24 w-24 opacity-35 lg:block"
+      style={{
+        backgroundImage: "radial-gradient(color-mix(in oklab, var(--neon) 60%, transparent) 1px, transparent 1.5px)",
+        backgroundSize: "14px 14px",
+      }}
+    />
+
+    {/* glowing particles */}
+    {[
+      { l: "8%", t: "22%", s: 3, c: "var(--neon)", d: "0s" },
+      { l: "18%", t: "70%", s: 2, c: "var(--cyanic)", d: "1s" },
+      { l: "44%", t: "14%", s: 2, c: "var(--neon)", d: "2s" },
+      { l: "55%", t: "80%", s: 3, c: "var(--neon)", d: "0.6s" },
+      { l: "62%", t: "30%", s: 2, c: "var(--cyanic)", d: "1.6s" },
+      { l: "88%", t: "18%", s: 3, c: "var(--neon)", d: "2.4s" },
+      { l: "92%", t: "60%", s: 2, c: "var(--cyanic)", d: "0.3s" },
+      { l: "30%", t: "45%", s: 2, c: "var(--neon)", d: "1.9s" },
+      { l: "70%", t: "10%", s: 2, c: "var(--neon)", d: "1.2s" },
+      { l: "12%", t: "88%", s: 2, c: "var(--cyanic)", d: "2.8s" },
+    ].map((p, i) => (
+      <span
+        key={i}
+        className="floaty absolute rounded-full"
+        style={{
+          left: p.l,
+          top: p.t,
+          width: p.s * 2,
+          height: p.s * 2,
+          background: p.c,
+          boxShadow: `0 0 ${p.s * 6}px ${p.s}px color-mix(in oklab, ${p.c} 70%, transparent)`,
+          animationDelay: p.d,
+        }}
+      />
+    ))}
+
+    {/* geometric line accents */}
+    <div className="absolute left-1/2 top-10 hidden h-px w-56 -translate-x-1/2 bg-gradient-to-r from-transparent via-primary/50 to-transparent lg:block" />
+    <div className="absolute bottom-10 left-1/3 hidden h-px w-64 bg-gradient-to-r from-transparent via-cyanic/40 to-transparent lg:block" />
+    <div className="absolute right-[6%] top-[12%] hidden h-24 w-24 border-l border-t border-primary/25 lg:block" />
+    <div className="absolute bottom-[14%] left-[4%] hidden h-20 w-20 border-b border-r border-cyanic/20 lg:block" />
+
+    {/* keeps left side dark for text readability */}
+    <div
+      className="absolute inset-0"
+      style={{
+        background: "linear-gradient(90deg, color-mix(in oklab, var(--background) 88%, transparent) 0%, transparent 45%)",
+      }}
+    />
+  </div>
+);
+
 export function Hero() {
   return (
     <section id="home" className="relative overflow-hidden grid-bg">
-      <div className="pointer-events-none absolute -right-24 top-0 h-[36rem] w-[36rem] rounded-full bg-primary/25 blur-[120px]" />
+      <HeroBackdrop />
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:py-24">
         <div className="min-w-0">
           <p className="text-xs font-semibold tracking-[0.3em] text-primary">HELLO, I'M</p>
