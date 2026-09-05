@@ -100,7 +100,7 @@ export function Hero() {
             alt="Tharun T.B, aspiring software engineer"
             width={532}
             height={624}
-            className="relative mx-auto w-full max-w-sm object-contain drop-shadow-[0_25px_60px_rgba(0,0,0,0.6)]"
+            className="relative mx-auto -mb-16 w-full max-w-lg scale-110 object-contain object-bottom drop-shadow-[0_25px_60px_rgba(0,0,0,0.6)] lg:-mb-24 lg:scale-125"
           />
         </div>
       </div>
