@@ -73,10 +73,12 @@ export function Hero() {
             {"{ }"}
           </div>
           <div
-            className="absolute bottom-24 left-0 hidden rounded-2xl glass floaty px-4 py-3 text-sm sm:block"
+            className="absolute bottom-24 left-0 hidden rounded-2xl glass floaty px-4 py-3 sm:block"
             style={{ animationDelay: "2.1s" }}
           >
-            🐍
+            <span className="font-mono text-sm font-bold text-cyanic">
+              Py<span className="text-chart-4">.</span>
+            </span>
           </div>
           <div
             className="absolute right-0 top-16 hidden w-40 rounded-2xl glass floaty p-3 lg:block"
