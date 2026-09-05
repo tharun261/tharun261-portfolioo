@@ -1,5 +1,5 @@
 import { Github, Linkedin, MessageCircle, Mouse } from "lucide-react";
-import photo from "@/assets/tharun.png.asset.json";
+import themedPhoto from "@/assets/tharun-themed.png";
 import { GITHUB_URL, LINKEDIN_URL } from "@/data/portfolio";
 
 const scrollTo = (id: string) =>
@@ -201,11 +201,15 @@ export function Hero() {
             </div>
           </div>
           <img
-            src={photo.url}
+            src={themedPhoto}
             alt="Tharun T.B, aspiring software engineer"
             width={532}
             height={624}
             className="relative mx-auto -mb-16 w-full max-w-lg scale-110 object-contain object-bottom drop-shadow-[0_25px_60px_rgba(0,0,0,0.6)] lg:-mb-24 lg:scale-125"
+            style={{
+              maskImage: "linear-gradient(to bottom, #000 70%, transparent 100%)",
+              WebkitMaskImage: "linear-gradient(to bottom, #000 70%, transparent 100%)",
+            }}
           />
           {/* Software Developer label at the bottom of the hero image */}
           <div className="relative z-10 mx-auto mt-2 w-fit">
