@@ -1,5 +1,4 @@
 import { Github, Linkedin, MessageCircle, Mouse } from "lucide-react";
-import photo from "@/assets/tharun.png.asset.json";
 import themedPhoto from "@/assets/tharun-themed.png";
 import { GITHUB_URL, LINKEDIN_URL } from "@/data/portfolio";
 
