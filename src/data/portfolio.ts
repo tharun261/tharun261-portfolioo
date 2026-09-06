@@ -1,5 +1,6 @@
 import breedImg from "@/assets/project-breed.jpg";
 import factCheckImg from "@/assets/project-factcheck.jpg";
+import calculatorImg from "@/assets/project-calculator.jpg";
 
 export const LINKEDIN_URL = "https://www.linkedin.com/in/tharun-t5-6349892b1";
 export const GITHUB_URL = "https://github.com/tharun261";
@@ -56,5 +57,13 @@ export const projects: Project[] = [
     image: factCheckImg,
     technologies: ["Python", "NLP", "Streamlit"],
     github: "https://github.com/tharun261/fact-check-ai",
+  },
+  {
+    name: "Calculator",
+    description:
+      "A modern responsive calculator built using HTML, CSS and JavaScript. Supports basic arithmetic operations with a clean user interface and smooth user experience.",
+    image: calculatorImg,
+    technologies: ["HTML", "CSS", "JavaScript"],
+    github: "https://tharun261.github.io/calculator/",
   },
 ];
