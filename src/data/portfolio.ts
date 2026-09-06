@@ -41,6 +41,7 @@ export type Project = {
   image: string;
   technologies: string[];
   github: string;
+  icon?: "Calculator";
 };
 
 export const projects: Project[] = [
@@ -65,5 +66,6 @@ export const projects: Project[] = [
     image: calculatorImg,
     technologies: ["HTML", "CSS", "JavaScript"],
     github: "https://tharun261.github.io/calculator/",
+    icon: "Calculator",
   },
 ];
