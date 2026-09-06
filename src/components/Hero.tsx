@@ -8,10 +8,10 @@ const scrollTo = (id: string) =>
 const HeroBackdrop = () => (
   <div className="pointer-events-none absolute inset-0 overflow-hidden bg-background" aria-hidden="true">
     {/* very dark base */}
-    <div className="absolute inset-0 bg-[#070710]" />
+    <div className="absolute inset-0 bg-[#04040a]" />
     {/* base radial glows */}
-    <div className="absolute -right-24 -top-10 h-[42rem] w-[42rem] rounded-full bg-primary/15 blur-[130px]" />
-    <div className="absolute right-[10%] top-1/2 h-[26rem] w-[26rem] -translate-y-1/2 rounded-full bg-cyanic/8 blur-[110px]" />
+    <div className="absolute -right-24 -top-10 h-[42rem] w-[42rem] rounded-full bg-primary/10 blur-[130px]" />
+    <div className="absolute right-[10%] top-1/2 h-[26rem] w-[26rem] -translate-y-1/2 rounded-full bg-cyanic/6 blur-[110px]" />
     <div
       className="absolute inset-0"
       style={{
@@ -96,13 +96,13 @@ const HeroBackdrop = () => (
     <div
       className="absolute inset-0"
       style={{
-        background: "linear-gradient(90deg, #070710 0%, color-mix(in oklab, var(--background) 70%, transparent) 30%, transparent 55%)",
+        background: "linear-gradient(90deg, #04040a 0%, color-mix(in oklab, var(--background) 70%, transparent) 30%, transparent 55%)",
       }}
     />
     {/* darken bottom edge so the photo blends into the next section */}
     <div
       className="absolute inset-x-0 bottom-0 h-32"
-      style={{ background: "linear-gradient(to bottom, transparent, #070710)" }}
+      style={{ background: "linear-gradient(to bottom, transparent, #04040a)" }}
     />
   </div>
 );

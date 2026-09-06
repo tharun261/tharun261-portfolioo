@@ -1,8 +1,7 @@
 import breedImg from "@/assets/project-breed.jpg";
 import factCheckImg from "@/assets/project-factcheck.jpg";
 
-// Replace this with your real LinkedIn profile URL when ready.
-export const LINKEDIN_URL = "https://www.linkedin.com/in/your-profile";
+export const LINKEDIN_URL = "https://www.linkedin.com/in/tharun-t5-6349892b1";
 export const GITHUB_URL = "https://github.com/tharun261";
 export const EMAIL = "tharunff283@gmail.com";
 export const PHONE = "9087480890";
