@@ -96,13 +96,13 @@ const HeroBackdrop = () => (
     <div
       className="absolute inset-0"
       style={{
-        background: "linear-gradient(90deg, #070710 0%, color-mix(in oklab, var(--background) 70%, transparent) 30%, transparent 55%)",
+        background: "linear-gradient(90deg, #04040a 0%, color-mix(in oklab, var(--background) 70%, transparent) 30%, transparent 55%)",
       }}
     />
     {/* darken bottom edge so the photo blends into the next section */}
     <div
       className="absolute inset-x-0 bottom-0 h-32"
-      style={{ background: "linear-gradient(to bottom, transparent, #070710)" }}
+      style={{ background: "linear-gradient(to bottom, transparent, #04040a)" }}
     />
   </div>
 );
