@@ -2,6 +2,7 @@ import {
   Award,
   BadgeCheck,
   Briefcase,
+  Calculator,
   Calendar,
   Code2,
   FileCode2,
@@ -37,6 +38,10 @@ const iconMap = {
   Globe,
   Github,
   LayoutDashboard,
+} as const;
+
+const projectIconMap = {
+  Calculator,
 } as const;
 
 const panel =
@@ -195,7 +200,14 @@ export function Projects() {
                     className="aspect-[16/10] w-full object-cover"
                   />
                   <div className="flex flex-1 flex-col items-center gap-3 p-6 text-center">
-                    <h3 className="font-display text-lg font-bold uppercase text-primary">
+                    <h3 className="flex items-center justify-center gap-2 font-display text-lg font-bold uppercase text-primary">
+                      {project.icon &&
+                        (() => {
+                          const PIcon = projectIconMap[project.icon];
+                          return PIcon ? (
+                            <PIcon size={18} className="text-primary" />
+                          ) : null;
+                        })()}
                       {project.name}
                     </h3>
                     <p className="text-sm text-muted-foreground">{project.description}</p>
